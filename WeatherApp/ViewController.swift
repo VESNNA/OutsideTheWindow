@@ -20,14 +20,27 @@ class ViewController: UIViewController {
     @IBAction func refreshBtnPressed(_ sender: UIButton) {
     }
     
+    lazy var weatherManager = APIWeatherManager(apiKey: "d157c9719cdbab4ff40e1975f14f511a")
+    let coordinates = Coordinates(latitude: 55.754030, longitude: 37.620768)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let icon = WeatherIconManager.Rain.image
-        let currentWeather = CurrentWeather(temperature: 10.0, apparentTemperature: 5.0, humidity: 30, pressure: 750, icon: icon)
-        updateUIWith(currentWeather: currentWeather)
+        weatherManager.fetchCurrentWeatherWith(coordinates: coordinates) { (result) in
+            switch result {
+            case .Success(let currentWeather):
+                self.updateUIWith(currentWeather: currentWeather)
+            case .Failure(let error as NSError):
+                
+                let alertController = UIAlertController(title: "Unable to get data ", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
-
+    
     func updateUIWith(currentWeather: CurrentWeather) {
         
         self.imageView.image = currentWeather.icon
@@ -36,7 +49,7 @@ class ViewController: UIViewController {
         self.apparentTempLbl.text = currentWeather.apparentTemperatureString
         self.humidityLbl.text = currentWeather.humidityString
     }
-
+    
 }
 
 
