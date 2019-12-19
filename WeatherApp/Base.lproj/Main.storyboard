@@ -113,7 +113,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="appearentTempLbl" destination="53A-Cz-vfe" id="9nh-6i-eEN"/>
+                        <outlet property="apparentTempLbl" destination="53A-Cz-vfe" id="r8c-4G-fY8"/>
                         <outlet property="humidityLbl" destination="uuR-zi-BSb" id="y7i-lj-rPL"/>
                         <outlet property="imageView" destination="FLT-BF-Sfc" id="Z6m-0u-ouo"/>
                         <outlet property="locationLbl" destination="hVk-u7-Hwg" id="5FX-e4-bJD"/>
