@@ -9,12 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var pressureLbl: UILabel!
+    @IBOutlet weak var humidityLbl: UILabel!
+    @IBOutlet weak var temperatureLbl: UILabel!
+    @IBOutlet weak var appearentTempLbl: UILabel!
+    @IBOutlet weak var refreshBtn: UIButton!
+    
+    @IBAction func refreshBtnPressed(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
 
+    func updateUIWith(currentWeather: CurrentWeather) {
+        
+        self.imageView.image = currentWeather.icon
+        self.pressureLbl.text = currentWeather.pressureString
+        self.temperatureLbl.text = currentWeather.temperatureString
+        self.appearentTempLbl.text = currentWeather.appearentTemperatureString
+        self.humidityLbl.text = currentWeather.humidityString
+        
+    }
 
 }
+
 

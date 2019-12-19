@@ -71,7 +71,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cQI-hu-iZa">
                                         <rect key="frame" x="0.0" y="673" width="414" height="105"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feelsLike" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-Cz-vfe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="appearentTemp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-Cz-vfe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="t85-nb-Exf"/>
@@ -94,6 +94,9 @@
                                                 <state key="normal" title="Refresh">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="refreshBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FSM-vA-KuO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -109,6 +112,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="appearentTempLbl" destination="53A-Cz-vfe" id="9nh-6i-eEN"/>
+                        <outlet property="humidityLbl" destination="uuR-zi-BSb" id="y7i-lj-rPL"/>
+                        <outlet property="imageView" destination="FLT-BF-Sfc" id="Z6m-0u-ouo"/>
+                        <outlet property="locationLbl" destination="hVk-u7-Hwg" id="5FX-e4-bJD"/>
+                        <outlet property="pressureLbl" destination="sLP-WP-HTE" id="5lD-7o-x9S"/>
+                        <outlet property="refreshBtn" destination="zb6-ul-XsE" id="G4P-Fu-Cs6"/>
+                        <outlet property="refreshBtnPressed" destination="zb6-ul-XsE" id="LCi-29-q1x"/>
+                        <outlet property="temperatureLbl" destination="j7T-WU-ZmK" id="stQ-CY-Wtt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
