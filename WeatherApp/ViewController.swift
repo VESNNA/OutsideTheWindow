@@ -18,7 +18,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var refreshBtn: UIButton!
     
     @IBAction func refreshBtnPressed(_ sender: UIButton) {
+        //toggleActivityIndicator(active: true)
+        getCurrentWeatherData()
     }
+    
+    /* Activity inicator on downloading
+    func toggleActivityIndicator(active: Bool) {
+        refreshBtn.isEnabled = active
+        if active {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+    */
     
     lazy var weatherManager = APIWeatherManager(apiKey: "d157c9719cdbab4ff40e1975f14f511a")
     let coordinates = Coordinates(latitude: 55.754030, longitude: 37.620768)
@@ -26,7 +39,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getCurrentWeatherData()
+    }
+    
+    func getCurrentWeatherData() {
         weatherManager.fetchCurrentWeatherWith(coordinates: coordinates) { (result) in
+            
+            //self.toggleActivityIndicator(active: false)
+            
             switch result {
             case .Success(let currentWeather):
                 self.updateUIWith(currentWeather: currentWeather)

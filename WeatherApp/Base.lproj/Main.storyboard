@@ -15,16 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-6P-hAR">
-                                <rect key="frame" x="73" y="44" width="268" height="818"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gtP-yW-JHj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fuy-Ym-llC">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="55"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S9A-Rb-liU">
+                                        <rect key="frame" x="157" y="0.0" width="100" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVk-u7-Hwg">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="WOf-FL-Izi"/>
+                                                    <constraint firstAttribute="height" constant="80" id="kyI-TF-Zhm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,49 +32,65 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EUe-Ig-HGE">
-                                        <rect key="frame" x="0.0" y="65" width="268" height="180"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SBc-EB-TbV">
+                                        <rect key="frame" x="15.5" y="90" width="383" height="383"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="FLT-BF-Sfc">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="180"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="FLT-BF-Sfc">
+                                                <rect key="frame" x="0.0" y="0.0" width="383" height="383"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="C07-tA-w2y"/>
+                                                    <constraint firstAttribute="width" secondItem="FLT-BF-Sfc" secondAttribute="height" multiplier="1:1" id="sLN-DL-wzT"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="3YV-8o-ftY">
-                                        <rect key="frame" x="0.0" y="255" width="268" height="68.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="O32-Mq-tM9">
+                                        <rect key="frame" x="70" y="483" width="274.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pressure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLP-WP-HTE">
-                                                <rect key="frame" x="0.0" y="0.0" width="99" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="J24-Tt-QWN"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuR-zi-BSb">
-                                                <rect key="frame" x="169" y="0.0" width="99" height="68.5"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="99" height="50"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uuR-zi-BSb" firstAttribute="height" secondItem="sLP-WP-HTE" secondAttribute="height" id="FUp-Yb-ugS"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GCy-4F-afd">
-                                        <rect key="frame" x="0.0" y="333.5" width="268" height="208"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R69-Ei-gug">
+                                        <rect key="frame" x="114" y="543" width="186.5" height="150"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="j7T-WU-ZmK">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="208"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Jno-WZ-XkP"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="80"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="50"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cQI-hu-iZa">
-                                        <rect key="frame" x="0.0" y="551.5" width="268" height="226.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xwf-zk-3UV">
+                                        <rect key="frame" x="119" y="703" width="176.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="appearentTemp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-Cz-vfe">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="226.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="176.5" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="t85-nb-Exf"/>
+                                                    <constraint firstAttribute="height" constant="50" id="x2s-bN-d7s"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,13 +98,13 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MMa-FQ-ZZR">
-                                        <rect key="frame" x="0.0" y="788" width="268" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="04P-kb-6ZO">
+                                        <rect key="frame" x="179.5" y="763" width="55" height="55"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb6-ul-XsE">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="JQW-Pp-Hpw"/>
+                                                    <constraint firstAttribute="height" constant="55" id="3rX-ej-PZc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <state key="normal" title="Refresh">
@@ -105,9 +121,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.41127042631097566" green="0.93026975818073598" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dkg-6P-hAR" secondAttribute="bottom" id="VjE-sD-LH9"/>
-                            <constraint firstItem="dkg-6P-hAR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aLa-EO-Zhf"/>
-                            <constraint firstItem="dkg-6P-hAR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dxP-2y-ie1"/>
+                            <constraint firstItem="gtP-yW-JHj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ijf-Uf-T9y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtP-yW-JHj" secondAttribute="trailing" id="kwc-he-TQq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtP-yW-JHj" secondAttribute="bottom" id="nBe-eJ-sF4"/>
+                            <constraint firstItem="gtP-yW-JHj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wqZ-0S-W2f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
