@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     */
     
-    lazy var weatherManager = APIWeatherManager(apiKey: "d157c9719cdbab4ff40e1975f14f511a")
+    lazy var weatherManager = APIWeatherManager(apiKey: "8ed4a42d3c54264f52124709334fd797")
     let coordinates = Coordinates(latitude: 55.754030, longitude: 37.620768)
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     func updateUIWith(currentWeather: CurrentWeather) {
         
-        self.imageView.image = currentWeather.icon
+        //self.imageView.image = currentWeather.icon
         self.pressureLbl.text = currentWeather.pressureString
         self.temperatureLbl.text = currentWeather.temperatureString
         self.apparentTempLbl.text = currentWeather.apparentTemperatureString
