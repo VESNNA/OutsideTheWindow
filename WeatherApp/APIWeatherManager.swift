@@ -24,7 +24,7 @@ enum ForecastType: FinalURLPoint  {
     var path: String {
         switch self {
         case .Current(let apiKey, let coordinates):
-            return "/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(apiKey)"
+            return "/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(apiKey)&units=metric"
         }
     }
     

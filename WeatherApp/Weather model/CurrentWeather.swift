@@ -14,6 +14,7 @@ struct CurrentWeather {
     let apparentTemperature: Double
     let humidity: Double
     let pressure: Double
+    let location: String
     //let icon: UIImage
 }
 
@@ -24,7 +25,8 @@ extension CurrentWeather: JSONDecodable {
             let temperature = main["temp"] as? Double,
             let apparentTemperature = main["feels_like"] as? Double,
             let humidity = main["humidity"] as? Double,
-            let pressure = main["pressure"] as? Double else {
+            let pressure = main["pressure"] as? Double,
+            let location = JSON["name"] as? String else {
                 return nil
         }
         
@@ -36,6 +38,7 @@ extension CurrentWeather: JSONDecodable {
         self.apparentTemperature = apparentTemperature
         self.humidity = humidity
         self.pressure = pressure
+        self.location = location
         //self.icon = icon
     }
 }
@@ -46,14 +49,14 @@ extension CurrentWeather {
     }
     
     var humidityString: String {
-        return "\(Int(humidity * 100))%"
+        return "\(Int(humidity))%"
     }
     
     var temperatureString: String {
-        return "\(Int(5 / 9 * (temperature - 32)))˚C"
+        return "\(Int(temperature))˚C"
     }
     
     var apparentTemperatureString: String {
-        return "Feels like: \(Int(5 / 9 * (apparentTemperature - 32)))˚C"
+        return "Feels like: \(Int(apparentTemperature))˚C"
     }
 }

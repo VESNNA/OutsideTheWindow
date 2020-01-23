@@ -64,10 +64,11 @@ class ViewController: UIViewController {
     func updateUIWith(currentWeather: CurrentWeather) {
         
         //self.imageView.image = currentWeather.icon
-        self.pressureLbl.text = currentWeather.pressureString
-        self.temperatureLbl.text = currentWeather.temperatureString
-        self.apparentTempLbl.text = currentWeather.apparentTemperatureString
-        self.humidityLbl.text = currentWeather.humidityString
+        pressureLbl.text = currentWeather.pressureString
+        temperatureLbl.text = currentWeather.temperatureString
+        apparentTempLbl.text = currentWeather.apparentTemperatureString
+        humidityLbl.text = currentWeather.humidityString
+        locationLbl.text = currentWeather.location
     }
     
 }
