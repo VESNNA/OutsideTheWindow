@@ -69,6 +69,8 @@ class ViewController: UIViewController {
         apparentTempLbl.text = currentWeather.apparentTemperatureString
         humidityLbl.text = currentWeather.humidityString
         locationLbl.text = currentWeather.location
+        // .text = currentWeather.timeFromTimestamp(timestamp: currentWeather.sunrise)
+        // .text = currentWeather.sunsetString
     }
     
 }

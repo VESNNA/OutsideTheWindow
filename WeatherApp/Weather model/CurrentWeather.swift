@@ -16,17 +16,26 @@ struct CurrentWeather {
     let pressure: Double
     let location: String
     //let icon: UIImage
+    let sunrise: Double
+    let sunset: Double
 }
 
 extension CurrentWeather: JSONDecodable {
     init?(JSON: [String: AnyObject]) {
         guard let main = JSON["main"] as? NSDictionary,
-            
             let temperature = main["temp"] as? Double,
             let apparentTemperature = main["feels_like"] as? Double,
             let humidity = main["humidity"] as? Double,
             let pressure = main["pressure"] as? Double,
-            let location = JSON["name"] as? String else {
+            
+            let location = JSON["name"] as? String,
+            
+            let sys = JSON["sys"] as? NSDictionary,
+            let sunrise = sys["sunrise"] as? Double,
+            let sunset = sys["sunset"] as? Double
+            
+        else {
+                print("JSON proceccing error")
                 return nil
         }
         
@@ -39,6 +48,8 @@ extension CurrentWeather: JSONDecodable {
         self.humidity = humidity
         self.pressure = pressure
         self.location = location
+        self.sunrise = sunrise
+        self.sunset = sunset
         //self.icon = icon
     }
 }
@@ -58,5 +69,16 @@ extension CurrentWeather {
     
     var apparentTemperatureString: String {
         return "Feels like: \(Int(apparentTemperature))˚C"
+    }
+    
+    func timeFromTimestamp (timestamp: Double) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.none
+        formatter.timeStyle = .short
+        
+        let time = Date(timeIntervalSince1970: timestamp)
+        let timeString = formatter.string(from: time)
+        
+        return timeString
     }
 }
