@@ -10,12 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pressureLbl: UILabel!
     @IBOutlet weak var humidityLbl: UILabel!
     @IBOutlet weak var temperatureLbl: UILabel!
     @IBOutlet weak var apparentTempLbl: UILabel!
     @IBOutlet weak var refreshBtn: UIButton!
+    @IBOutlet weak var sunriseLbl: UILabel!
+    @IBOutlet weak var sunsetLbl: UILabel!
+    @IBOutlet weak var goneLbl: UILabel!
     
     @IBAction func refreshBtnPressed(_ sender: UIButton) {
         //toggleActivityIndicator(active: true)
@@ -39,6 +43,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getCurrentWeatherData()
     }
     
@@ -63,14 +70,16 @@ class ViewController: UIViewController {
     
     func updateUIWith(currentWeather: CurrentWeather) {
         
-        //self.imageView.image = currentWeather.icon
+        //self.mainImageView.image = currentWeather.icon
         pressureLbl.text = currentWeather.pressureString
         temperatureLbl.text = currentWeather.temperatureString
         apparentTempLbl.text = currentWeather.apparentTemperatureString
         humidityLbl.text = currentWeather.humidityString
         locationLbl.text = currentWeather.location
-        // .text = currentWeather.timeFromTimestamp(timestamp: currentWeather.sunrise)
-        // .text = currentWeather.sunsetString
+        sunriseLbl.text = currentWeather.timeFromTimestamp(timestamp: currentWeather.sunrise)
+        sunsetLbl.text = currentWeather.timeFromTimestamp(timestamp: currentWeather.sunset)
+        goneLbl.text = currentWeather.daylightGone()
+        if goneLbl.text != nil { imageView.image = UIImage(named: "clear-night") }
     }
     
 }

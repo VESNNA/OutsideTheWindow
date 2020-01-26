@@ -81,4 +81,19 @@ extension CurrentWeather {
         
         return timeString
     }
+    
+    func daylightGone () -> (String) {
+        let now = Date().timeIntervalSince1970.rounded()
+        let startOfDay = sunrise
+        let endOfDay = sunset
+        
+        let gone = (((now - startOfDay)/(endOfDay - startOfDay)) * 100).rounded()
+        
+        if (gone > 0) && (gone < 100) {
+            return "\(Int(gone))%"
+        } else {
+            return ""
+        }
+    }
+    
 }
